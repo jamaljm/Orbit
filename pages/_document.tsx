@@ -7,28 +7,10 @@ export default function Document() {
       <Head>
         <meta charSet="utf-8" />
 
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/apple-touch-icon.png"
+        <meta
+          name="viewport"
+          content="width=device-width, minimum-scale=1.0, maximum-scale = 1.0, user-scalable = no"
         />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/favicon-32x32.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/favicon-16x16.png"
-        />
-        <link rel="manifest" href="/site.webmanifest" />
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#2362C1" />
-        <link rel="shortcut icon" href="/favicon.ico" />
-        <meta name="msapplication-TileColor" content="#2362C1" />
-        <meta name="theme-color" content="#ffffff" />
 
         <meta name="application-name" content="The Hyperlane Network" />
         <meta
@@ -40,18 +22,6 @@ export default function Document() {
           content="The Permissionless Interoperability layer built for the modular future. Hyperlane is the first interoperability layer that enables you to permissionlessly connect any blockchain, out-of-the-box."
         />
 
-        <meta name="HandheldFriendly" content="true" />
-        <meta
-          name="apple-mobile-web-app-title"
-          content="The Hyperlane Network"
-        />
-        <meta name="apple-mobile-web-app-capable" content="no" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-        <meta property="og:url" content={links.baseUrl} />
-        <meta property="og:title" content="The Hyperlane Network" />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content={links.baseUrl + "/logo.png"} />
         <meta
           property="og:description"
           content="The Permissionless Interoperability layer built for the modular future. Hyperlane is the first interoperability layer that enables you to permissionlessly connect any blockchain, out-of-the-box."
