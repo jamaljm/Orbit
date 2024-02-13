@@ -1,90 +1,7 @@
-import React, { useState } from "react";
-import { Select, SelectItem } from "@nextui-org/react";
-import { collection, addDoc, getDocs, getFirestore } from "firebase/firestore";
-import {
-  Modal,
-  ModalContent,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
-  Button,
-  useDisclosure,
-  Input,
-  Tabs,
-  Tab,
-} from "@nextui-org/react";
+import React from "react";
 import Link from "next/link";
-import { doc, setDoc } from "firebase/firestore";
-
-import { app, db, database } from "@/firebase";
 
 export default function Orbit_details() {
-  type Submission = {
-    type: string;
-    website: string;
-    name_of_project: string;
-    Github: string;
-    Twitter: string;
-    description: string;
-    id: number;
-  };
-
-  const types = [
-    "Hyperlane ISM",
-    "Hyperlane hooks",
-    "Permissionless deployments",
-    "Partners",
-    "Hyperlane Apps",
-  ];
-
-  const [submission, setSubmission] = useState<Submission>({
-    type: "",
-    website: "",
-    name_of_project: "",
-    Github: "",
-    Twitter: "",
-    description: "",
-    id: 0,
-  });
-
-  const { isOpen, onOpen, onOpenChange } = useDisclosure();
-  const [successMessage, setSuccessMessage] = useState("");
-  const [errorMessage, setErrorMessage] = useState<string>("");
-
-  const handleAddButtonClicked = () => {
-    setSuccessMessage("");
-    setErrorMessage("");
-  };
-
-  const handleAddDoc = async () => {
-    setSuccessMessage("");
-    setErrorMessage("");
-    if (submission.id === 0) {
-      setErrorMessage("Please enter your id");
-      return;
-    }
-    // if (submission.quest_id === null) {
-    //   setErrorMessage("Please select a quest");
-    //   return;
-    // }
-    // if (submission.submission === "") {
-    //   setErrorMessage("Please enter your submission");
-    //   return;
-    // }
-
-    try {
-      const dbInstance = collection(database, "orbit");
-      const volunteerDocRef = doc(dbInstance, submission.id.toString());
-      await setDoc(volunteerDocRef, {
-        ...submission,
-      });
-      setSuccessMessage("Project submitted successfully");
-      setErrorMessage("");
-    } catch (error) {
-      setErrorMessage("Error submitting Project");
-    }
-  };
-
   return (
     <>
       <section className="  bg-[#2362C0] bg-cover bg-center  px-10  pb-10  flex justify- items-center    flex-col  w-full pt-2 ">
@@ -109,22 +26,14 @@ export default function Orbit_details() {
       </section>
       <section className="bg-[#2362C0] pb-16">
         <div className="  max-w-[90%] 2xl:max-w-[90%] mx-auto  ">
-          {/* <div className="px-10 gap-2 flex  flex-wrap justify-center">
-            <Tags title="Hackathon Projects" count={52} />
-            <Tags title="Permissionless Deployments" count={5} />
-            <Tags title="ISMs" count={9} />
-            <Tags title="Hooks" count={12} />
-            <Tags title="Apps" count={2} />
-            <Tags title=" Partners" count={55} />
-          </div> */}
           <div className=" grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4  justify-center items-center w-full px-10 h-full justify-items-center   py-10 ">
             <ReusableRFC
               image_url="/orbit/chains/eclipse.jpg"
               title="Eclipse"
               description="Eclipse is
-Ethereum's fastest L2,
-powered by the
-Solana Virtual Machine"
+                        Ethereum's fastest L2,
+                        powered by the
+                        Solana Virtual Machine"
               Website_link="https://www.eclipse.builders/"
             />
             <ReusableRFC
@@ -245,26 +154,6 @@ const ReusableRFC: React.FC<ReusableRFCProps> = ({
         <Link href={Website_link || "#"}>
           <div className="relative bottom-0 mt-3 w-full right-0">
             <div className="flex justify-evenly w-full   text-white text-xs lg:text-lg  xl:text-xl font-semibold">
-              {/* <div className="flex items-center text-white">
-              <svg
-                width="40"
-                height="40"
-                viewBox="0 0 60 60"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M36.1262 45.6962C36.1262 45.0172 36.1517 42.1661 36.1517 39.3965C36.1517 37.4636 35.4891 36.1996 34.7452 35.5599C39.36 35.0475 44.2037 33.2964 44.2037 25.3384C44.2037 23.0774 43.4013 21.2285 42.0737 19.7801C42.2874 19.2562 42.9982 17.1503 41.8677 14.298C41.8677 14.298 40.1319 13.741 36.1771 16.4217C34.5227 15.9626 32.75 15.7324 30.9913 15.7248C29.2301 15.7324 27.4574 15.9626 25.8055 16.4217C21.8482 13.741 20.1086 14.298 20.1086 14.298C18.9819 17.1503 19.6927 19.2562 19.9064 19.7801C18.5813 21.2285 17.7738 23.0774 17.7738 25.3384C17.7738 33.2761 22.6099 35.0538 27.2094 35.5765C26.6169 36.094 26.0828 37.0071 25.8946 38.3461C24.7132 38.8764 21.7134 39.7894 19.8657 36.6243C19.8657 36.6243 18.7721 34.6367 16.6929 34.4892C16.6929 34.4892 14.6697 34.4638 16.5505 35.7494C16.5505 35.7494 17.9086 36.3865 18.8509 38.7797C18.8509 38.7797 20.0666 42.8083 25.8284 41.5557C25.8386 43.2852 25.8564 45.2041 25.8564 45.6962H36.1262Z"
-                  fill="white"
-                />
-              </svg>
-              <Link href={Github_link || "#"}>
-                <span>Github</span>
-              </Link>
-            </div> */}
-
               <div className="flex items-center text-white">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -287,23 +176,6 @@ const ReusableRFC: React.FC<ReusableRFCProps> = ({
           </div>{" "}
         </Link>
       </div>
-    </div>
-  );
-};
-
-interface TagProps {
-  title: string;
-  count: number;
-  onClick?: () => void;
-}
-
-const Tags: React.FC<TagProps> = ({ title, count, onClick }) => {
-  return (
-    <div
-      className="rounded-full text-xs cursor-pointer hover:bg-[#d631b9] transition-all duration-300 lg:text-medium font-medium  w-fit 2xl:mx-2 py-2 sm:py-3 px-3 sm:px-5 bg-transparent border border-white text-white"
-      onClick={onClick}
-    >
-      {title} ({count})
     </div>
   );
 };

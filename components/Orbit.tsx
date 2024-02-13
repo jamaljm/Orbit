@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Select, SelectItem } from "@nextui-org/react";
-import { collection, addDoc, getDocs, getFirestore } from "firebase/firestore";
+import { collection } from "firebase/firestore";
 import {
   Modal,
   ModalContent,
@@ -11,8 +11,6 @@ import {
   useDisclosure,
   Input,
   Link,
-  Tabs,
-  Tab,
 } from "@nextui-org/react";
 import { doc, setDoc } from "firebase/firestore";
 
@@ -59,15 +57,6 @@ export default function Orbit() {
   const handleAddDoc = async () => {
     setSuccessMessage("");
     setErrorMessage("");
-
-    // if (submission.quest_id === null) {
-    //   setErrorMessage("Please select a quest");
-    //   return;
-    // }
-    // if (submission.submission === "") {
-    //   setErrorMessage("Please enter your submission");
-    //   return;
-    // }
 
     try {
       const dbInstance = collection(database, "orbit");
