@@ -317,7 +317,7 @@ export default function Orbit() {
             <ReusableRFC title="Apps" description="14 Apps" link="/apps" />
 
             <div className="bg-transparent justify-center mt-5 relative border-2  flex flex-col 2xl:w-[324px] 2xl:h-[240px] w-[245px] h-[181px]  lg:w-[270px] lg:h-[200px] px-8 rounded-2xl  py-3 text-center border-white hover:border-[#d631b9] transition-all duration-150 ease-in-out">
-              <Link href="/projects">
+              <Link href="https://hyperlaneacademy.vercel.app/projects">
                 <div className="flex flex-col">
                   <span className="text-white text-xl lg:text-2xl font-bold   decoration-white decoration-1  underline-offset-[6px]">
                     See Hackathon Projects
