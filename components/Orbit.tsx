@@ -157,16 +157,14 @@ export default function Orbit() {
                         popoverProps={{
                           classNames: {
                             base: "before:bg-default-200",
-                            content:
-                              "text-black/90 ",
+                            content: "text-black/90 ",
                           },
-                          }}
-                          classNames={{
-                            base: "text-white/90",
-                            value: "text-white/90",
-                            label: "text-white/90",
-                          
-                          }}
+                        }}
+                        classNames={{
+                          base: "text-white/90",
+                          value: "text-white/90",
+                          label: "text-white/90",
+                        }}
                         label="Type of your project"
                         variant="bordered"
                         className=" text-white/90"
