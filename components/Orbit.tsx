@@ -136,7 +136,7 @@ export default function Orbit() {
                 {/* success message */}
 
                 <ModalContent>
-                  {(onClose) => (
+                  {(onClose: any) => (
                     <>
                       <ModalHeader className="flex font-body4 py-6 text-white  text-base  font-normal tracking-wide gap-1">
                         {successMessage}
@@ -147,7 +147,7 @@ export default function Orbit() {
               </>
             ) : (
               <ModalContent>
-                {(onClose) => (
+                {(onClose: any) => (
                   <>
                     <ModalHeader className="flex flex-col gap-1 text-white">
                       Submit your quest
@@ -156,13 +156,12 @@ export default function Orbit() {
                       <Select
                         classNames={{
                           label: "text-white/90",
-                          popover:
+                          popoverContent:
                             "bg-[#d631b9] border-[#d631b9] text-white/90 border border-white/90",
                         }}
                         label="Type of your project"
                         variant="bordered"
-                        defaultValue={types[0]}
-                        onChange={(event) =>
+                        onChange={(event: { target: { value: any } }) =>
                           setSubmission({
                             ...submission,
                             type: event.target.value,
