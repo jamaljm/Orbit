@@ -129,10 +129,10 @@ export default function Orbit_details() {
               Website_link="https://app.chainarq.com/"
             />{" "}
             <ReusableRFC
-              image_url="/orbit/apps/aave.png"
+              image_url="/orbit/apps/cron.jpg"
               title="Cron"
-              Website_link=""
-            />{" "}
+              Website_link="https://docs.cronfi.com/twamm/"
+            />
             <ReusableRFC
               image_url="/orbit/apps/decent.jpg"
               title="Decent"
@@ -156,12 +156,12 @@ export default function Orbit_details() {
             <ReusableRFC
               image_url="/orbit/apps/kalani.png"
               title="Khalani"
-              Website_link="https://moonbeam.network/"
+              Website_link="https://khalani.network/"
             />{" "}
             <ReusableRFC
               image_url="/orbit/apps/mitosis-logo.jpg"
               title="Mitosis"
-              Website_link="https://www.neutron.org/"
+              Website_link="https://mitosis.org/"
             />{" "}
             <ReusableRFC
               image_url="/orbit/apps/shogun.png"
@@ -181,7 +181,7 @@ export default function Orbit_details() {
             <ReusableRFC
               image_url="/orbit/apps/toucan-logo-bird.svg"
               title="Toucan"
-              Website_link="https://scroll.io/"
+              Website_link="https://toucan.earth/"
             />
             <ReusableRFC
               image_url="/orbit/apps/poolshark.png"

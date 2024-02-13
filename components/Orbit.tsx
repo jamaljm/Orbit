@@ -159,12 +159,9 @@ export default function Orbit() {
                             base: "before:bg-default-200",
                             content:
                               "text-black/90 ",
-                            value: "text-white/90",
                           },
                           }}
                           classNames={{
-                            select: "text-white/90",
-                            icon: "text-white/90",
                             base: "text-white/90",
                             value: "text-white/90",
                             label: "text-white/90",
