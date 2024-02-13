@@ -154,13 +154,25 @@ export default function Orbit() {
                     </ModalHeader>
                     <ModalBody>
                       <Select
-                        classNames={{
-                          label: "text-white/90",
-                          popoverContent:
-                            "bg-[#d631b9] border-[#d631b9] text-white/90 border border-white/90",
-                        }}
+                        popoverProps={{
+                          classNames: {
+                            base: "before:bg-default-200",
+                            content:
+                              "text-black/90 ",
+                            value: "text-white/90",
+                          },
+                          }}
+                          classNames={{
+                            select: "text-white/90",
+                            icon: "text-white/90",
+                            base: "text-white/90",
+                            value: "text-white/90",
+                            label: "text-white/90",
+                          
+                          }}
                         label="Type of your project"
                         variant="bordered"
+                        className=" text-white/90"
                         onChange={(event: { target: { value: any } }) =>
                           setSubmission({
                             ...submission,
