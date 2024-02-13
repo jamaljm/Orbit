@@ -314,7 +314,7 @@ export default function Orbit() {
               description="14 Rollups"
               link="/rollups"
             />
-            <ReusableRFC title="Apps" description="15 Apps" link="/apps" />
+            <ReusableRFC title="Apps" description="14 Apps" link="/apps" />
 
             <div className="bg-transparent justify-center mt-5 relative border-2  flex flex-col 2xl:w-[324px] 2xl:h-[240px] w-[245px] h-[181px]  lg:w-[270px] lg:h-[200px] px-8 rounded-2xl  py-3 text-center border-white hover:border-[#d631b9] transition-all duration-150 ease-in-out">
               <Link href="/projects">
